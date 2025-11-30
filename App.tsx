@@ -20,7 +20,7 @@ export default function App() {
     const { data: sub } = supabase.auth.onAuthStateChange((_e, session) => {
       setIsAuthed(!!session)
     })
-    return () => sub.subscription.unsubscribe()
+    return () => sub?.subscription.unsubscribe()
   }, [])
 
   const signIn = async () => {
